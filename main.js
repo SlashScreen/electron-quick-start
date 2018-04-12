@@ -1,4 +1,5 @@
 const electron = require('electron')
+var rootsrc = require("./rootsrc.json")
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -17,7 +18,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/assets/index.html'),
+    pathname: path.join(__dirname, rootsrc.root),
     protocol: 'file:',
     slashes: true
   }))
